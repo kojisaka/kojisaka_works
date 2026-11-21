@@ -1,0 +1,44 @@
+<html>
+<body>
+<pre>
+<h1>ﾋﾞﾙﾄﾞのﾛｸﾞ</h1>
+<h3>
+--------------------構成: GenChord - Win32 Debug--------------------
+</h3>
+<h3>ｺﾏﾝﾄﾞ ﾗｲﾝ</h3>
+一時ﾌｧｲﾙ "C:\WINDOWS\TEMP\RSP5040.TMP" を作成し、次の内容を記録します
+[
+/nologo /MDd /W4 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/GenChord.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\User\Sakamoto\Music\GenChord\GenChordDlg.cpp"
+]
+Creating command line "cl.exe @C:\WINDOWS\TEMP\RSP5040.TMP" 
+一時ﾌｧｲﾙ "C:\WINDOWS\TEMP\RSP5041.TMP" を作成し、次の内容を記録します
+[
+Winmm.lib /nologo /subsystem:windows /incremental:yes /pdb:"Debug/GenChord.pdb" /debug /machine:I386 /out:"Debug/GenChord.exe" /pdbtype:sept 
+.\Debug\Calculator.obj
+.\Debug\GenChord.obj
+.\Debug\GenChordDlg.obj
+.\Debug\Generator.obj
+.\Debug\Instrument.obj
+.\Debug\KeyChordChain.obj
+.\Debug\KeyChordChainList.obj
+.\Debug\StdAfx.obj
+.\Debug\GenChord.res
+]
+ｺﾏﾝﾄﾞ ﾗｲﾝ "link.exe @C:\WINDOWS\TEMP\RSP5041.TMP" の作成中
+<h3>ｱｳﾄﾌﾟｯﾄ ｳｨﾝﾄﾞｳ</h3>
+ｺﾝﾊﾟｲﾙ中...
+GenChordDlg.cpp
+c:\program files\microsoft visual studio\vc98\include\mmsystem.h(1623) : warning C4201: 非標準の拡張機能が使用されています : 無名の構造体または共用体です。
+c:\program files\microsoft visual studio\vc98\include\mmsystem.h(1627) : warning C4201: 非標準の拡張機能が使用されています : 無名の構造体または共用体です。
+c:\program files\microsoft visual studio\vc98\include\mmsystem.h(1648) : warning C4201: 非標準の拡張機能が使用されています : 無名の構造体または共用体です。
+c:\program files\microsoft visual studio\vc98\include\mmsystem.h(1652) : warning C4201: 非標準の拡張機能が使用されています : 無名の構造体または共用体です。
+ﾘﾝｸ中...
+
+
+
+<h3>結果</h3>
+GenChord.exe - ｴﾗｰ 0、警告 4
+</pre>
+</body>
+</html>
