@@ -9,7 +9,7 @@ void divide(long long x[], long long y[], long long n, long long a, long long k)
 long long main(void){
   static long long s[Num], c;
   int i, j;
-  fprintf(stderr, "Calculating...  Estimated processing time is 26sec.\n\n");
+  fprintf(stderr, "Calculating PI 100000 digits.  Estimated time is 26 sec.\n\n");
   for(j=0; j<Num; j++)s[j]=0;
   addAtan(s, 16, 5, 1);
   addAtan(s, 4, 239, -1);
