@@ -146,8 +146,7 @@ void CSpaceTorpedoGameDlg::OnTimer(UINT_PTR nIDEvent) {
 		enemyTorpd.z -= ZVel + ZTorpdVel;
 	}
 	static TPos self = {0, 0, 0};
-	if (prevEnemyTorpd.z > 0 && enemyTorpd.z <= 0 &&
-		IsHit(self, prevEnemyTorpd, self, enemyTorpd)) {
+	if (IsHit(self, prevEnemyTorpd, self, enemyTorpd)) {
 		selfDmgRemainTim = DmgDwnTim;
 		torpedoRemainTim = TrpRcvTim;
 	}
@@ -197,8 +196,7 @@ void CSpaceTorpedoGameDlg::OnTimer(UINT_PTR nIDEvent) {
 		if (pEs->cllpDeg > 0) {
 			pEs->cllpDeg += 0x20;
 		} else if (torpedo.z >= 0) {
-			if (prevTorpd.z < prevEs.z && torpedo.z >= pEs->z &&
-				IsHit(prevEs, prevTorpd, *pEs, torpedo)         ) {
+			if (IsHit(prevEs, prevTorpd, *pEs, torpedo)) {
 				torpedo.z = - ZTorpdVel;
 				pEs->cllpDeg = 0x80;
 				score += 100;
@@ -255,14 +253,22 @@ void CSpaceTorpedoGameDlg::controlSelfPerpVel() {
 // 敵宇宙船に当たったか判定する
 bool CSpaceTorpedoGameDlg::IsHit(TPos& oldOrg, TPos& oldSbj, TPos& newOrg, TPos& newSbj) {
 
-	double x = oldSbj.x - oldOrg.x;
-	double y = oldSbj.y - oldOrg.y;
-	double z = oldSbj.z - oldOrg.z;
-	double a = newSbj.x - newOrg.x - x;
-	double b = newSbj.y - newOrg.y - y;
-	double c = newSbj.z - newOrg.z - z;
-	double innPrd = a * x + b * y + c * z;
-	double distSqr = x * x + y * y + z * z - innPrd * innPrd / (a * a + b * b + c * c);
+	double x0 = oldSbj.x - oldOrg.x;
+	double y0 = oldSbj.y - oldOrg.y;
+	double z0 = oldSbj.z - oldOrg.z;
+	double a = newSbj.x - newOrg.x - x0;
+	double b = newSbj.y - newOrg.y - y0;
+	double c = newSbj.z - newOrg.z - z0;
+	double innPrd = a * x0 + b * y0 + c * z0;
+	double t = - innPrd / (a * a + b * b + c * c);
+	if (t < 0)
+		t = 0;
+	else if (t > 1)
+		t = 1;
+	double x = x0 + a * t;
+	double y = y0 + b * t;
+	double z = z0 + c * t;
+	double distSqr = x * x + y * y + z * z;
 	const double tchDist = EShipRad + TorpdRad;
 	return (distSqr < tchDist * tchDist);
 }
