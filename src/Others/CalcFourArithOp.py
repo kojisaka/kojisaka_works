@@ -1,17 +1,17 @@
 class IdxAndVal:
 	i: int
-	v: float
+	v: int
 
 def main():
 	while True:
-		s = input("式(空文字列入力なら終了)? ") + "\r"
-		if s == "\r": return
+		s = input(" \n式(空なら終了)? ") + "\n"
+		if s == "\n": return
 		r = IdxAndVal
 		r.v = r.i = 0
-		if scanExpr(s, r) and s[r.i] == "\r":
-			print("答え:", r.v)
+		if scanExpr(s, r) and s[r.i] == "\n":
+			print("計算した結果  :", r.v)
 		else:
-			print("エラー:", s[r.i:-1], "以降が不正")
+			print("入力内容が不正:", " " * r.i + "^")
 
 def scanExpr(s, r):
 	c = s[r.i]
@@ -22,7 +22,7 @@ def scanExpr(s, r):
 	while s[r.i] == "+" or s[r.i] == "-":
 		op = s[r.i]
 		r.i += 1
-		if not scanTerm(s,r): break
+		if not scanTerm(s, r): return False
 		if op == "+":
 			v += r.v
 		else:
@@ -36,12 +36,13 @@ def scanTerm(s, r):
 	while s[r.i] == "*" or s[r.i] == "/":
 		op = s[r.i]
 		r.i += 1
-		if not scanFactor(s,r): break
+		iPrev = r.i
+		if not scanFactor(s, r): return False
 		if op == "*":
 			v *= r.v
 		else:
-			if r.v == 0: return False
-			v /= r.v
+			if r.v == 0: r.i = iPrev; return False
+			v //= r.v
 	r.v = v
 	return True
 
