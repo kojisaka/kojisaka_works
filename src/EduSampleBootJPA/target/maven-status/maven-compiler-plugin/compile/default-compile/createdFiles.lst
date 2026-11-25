@@ -1,0 +1,10 @@
+com\example\demo\entity\DepStatusEntityEx.class
+com\example\demo\service\DepStatusService.class
+com\example\demo\EduSampleBootJpaApplication.class
+com\example\demo\DispDB_JPA.class
+com\example\demo\entity\DepStatusEntity.class
+com\example\demo\Ex10.class
+com\example\demo\Ex10_pr2.class
+com\example\demo\repository\DepStatusRepositoryEx.class
+com\example\demo\repository\DepStatusRepository.class
+com\example\demo\Ex10_pr1.class

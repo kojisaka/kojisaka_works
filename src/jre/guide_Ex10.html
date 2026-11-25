@@ -1,0 +1,39 @@
+<HTML>
+<HEAD>
+<TITLE>事業者状況登録システム(JPA使用版)の使い方</TITLE>
+</HEAD>
+<BODY STYLE="font-size:14px;">
+<H2>事業者状況登録システム(JPA使用版)の使い方</H2>
+名前、業種、詳細を入れて登録ボタンを押す。<BR>
+業種には Bus か FC を入れる(大文字小文字もこの通りに)。<BR>
+業種が Bus のときは、詳細に利用者数を入れる。<BR>
+業種が FC のときは、詳細に店の一覧を入れる。<BR>
+店と店の間は半角空白で区切る。全角空白は不可。<BR>
+空白は複数並んでてもよい。行頭と行末に空白を入れてはならない。<BR>
+<BR>
+すべての登録が完了したら、<BR>
+登録状況表示ボタンを押して登録事業所一覧画面を表示し、<BR>
+登録状況を確認する。<BR>
+<BR>
+URL は http://localhost/ディレクトリ名。<BR>
+(RegDepSt_Ex10.bat で起動した場合は http://localhost/Ex10 のウィンドウが自動で開かれる)<BR>
+<BR>
+ディレクトリ名は、<BR>
+Ex10　‥‥‥‥‥‥‥‥‥‥‥ DBに保存版。<BR>
+Ex10_pr1 ～ Ex10_pr2 ‥‥‥ DBに保存版(排他制御確認のために登録処理を遅くしてある。<BR>
+　　　　　　　　　　　　　　　　　　　　　　Bus: 利用者数ｍ秒遅延。FC: 3000ｍ秒遅延)。<BR>
+<BR>
+これを動かすには、事前にMySQLのインストールと設定をしておく必要がある。<BR>
+<BR>
+具体的には、事前に以下のことを行っておく。<BR>
+<BR>
+(1) MySQLをインストール。<BR>
+(2) ユーザ名 root 、パスワード pass というアカウントを作成。<BR>
+(3) MySQLのコンソールで以下のSQL文を実行。<BR>
+create database edu_sample;<BR>
+use edu_sample;<BR>
+create table dep_status(id int auto_increment primary key,<BR>
+&nbsp;&nbsp;name varchar(20), type varchar(10), shared varchar(20));<BR>
+<BR>
+</BODY>
+</HEAD>
