@@ -4,4 +4,4 @@ cd ..\bin
 start java -jar EduSampleBootJPA-1.jar
 timeout /t 3
 start http://localhost/Ex10
-start ..\guide_Ex10.html
+start ..\guide_boot_jpa.html

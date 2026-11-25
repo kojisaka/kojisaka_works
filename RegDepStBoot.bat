@@ -4,4 +4,4 @@ cd ..\bin
 start java -jar EduSampleBoot-1.jar
 timeout /t 3
 start http://localhost/Ex9_pr3
-start ..\guide_Ex9.html
+start ..\guide_boot.html
