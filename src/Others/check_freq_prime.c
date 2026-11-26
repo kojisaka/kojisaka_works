@@ -12,7 +12,7 @@ int main(void){
 	static TCell *vpCell[0x10000], vCell[Size];
 	unsigned r, c, n, s, f;
 	TCell **ppCell, **pp, *p;
-	printf("   range    theoretical   real   ( freq.)   error\n\n");
+	printf("    rng    rng/log(rng) real-cnt ( freq.)   error\n\n");
 	for (n = 0; n < 0x10000; n++){ vpCell[n] = NULL; }
 	r = 10; c = 1; n = 0; s = 3;
 	while (1){
