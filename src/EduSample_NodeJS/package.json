@@ -1,0 +1,21 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "RegDepSt_NodeJS.js",
+  "bin": "RegDepSt_NodeJS.js",
+  "scripts": {
+    "start": "nodemon RegDepSt_NodeJS.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDepe ndencies": {
+    "http": "^0.0.1-security"
+  },
+  "dependencies": {
+    "express": "^5.3.0"
+  },
+  "devDependencies": {}
+}
