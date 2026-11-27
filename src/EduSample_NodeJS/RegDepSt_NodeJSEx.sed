@@ -32,8 +32,9 @@ AdminQuietInstCmd=
 UserQuietInstCmd=
 FILE0="RegDepSt_NodeJS.exe"
 FILE1="regMem.html"
-FILE2="dispMem.html"
-FILE3="guide_NodeJS.html"
+FILE2="regDB.html"
+FILE3="disp.html"
+FILE4="guide_NodeJS.html"
 [SourceFiles]
 SourceFiles0=D:\kojisaka_works\src\EduSample_NodeJS\
 [SourceFiles0]
@@ -41,3 +42,4 @@ SourceFiles0=D:\kojisaka_works\src\EduSample_NodeJS\
 %FILE1%=
 %FILE2%=
 %FILE3%=
+%FILE4%=

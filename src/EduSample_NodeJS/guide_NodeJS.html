@@ -15,8 +15,24 @@
 登録状況表示ボタンを押して登録事業所一覧画面を表示し、<BR>
 登録状況を確認する。<BR>
 <BR>
-URL は http://localhost/regMem ‥‥‥ メモリへの保存のみ(DBは未使用)。<BR>
+URL は http://localhost/ページ名。<BR>
 (RegDepSt_NodeJSEx.exe で起動した場合は http://localhost/regMem のウィンドウが自動で開かれる)<BR>
+<BR>
+ページ名は、<BR>
+regMem ‥‥‥ メモリに保存版。<BR>
+regDB　 ‥‥‥ DBに保存版。<BR>
+<BR>
+DBに保存版を動かすには、事前にMySQLのインストールと設定をしておく必要がある。<BR>
+<BR>
+もしDBに保存版を動かす場合は、事前に以下のことを行っておく。<BR>
+<BR>
+(1) MySQLをインストール。<BR>
+(2) ユーザ名 root 、パスワード pass というアカウントを作成。<BR>
+(3) MySQLのコンソールで以下のSQL文を実行。<BR>
+create database edu_sample;<BR>
+use edu_sample;<BR>
+create table dep_status(id int auto_increment primary key,<BR>
+&nbsp;&nbsp;name varchar(20), type varchar(10), shared varchar(20));<BR>
 <BR>
 </BODY>
 </HEAD>

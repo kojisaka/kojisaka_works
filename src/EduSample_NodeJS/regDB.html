@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<title>事業所状況登録</title>
+</head>
+<body>
+	<form method="post">
+		名前　<input type="text" name="name"   size="10" value="${name}"  ><br>
+		業種　<input type="text" name="type"   size="6"  value="${type}"  ><br>
+		詳細　<input type="text" name="detail" size="80" value="${detail}"><br>
+		<input type="submit" style="width:20em;" value="登　録">
+	</form>
+	${msg} <br>
+	<br>
+	<form action="dispDB" method="post" style="margin-left:20em;">
+		<input type="submit" value="登録状況表示">
+	</form>
+</body>
+</html>
