@@ -3,14 +3,14 @@ const TypeFC  = "FC";
 const PortNo = 80;
 const express = require("express");
 const app = express();
-const htmlReg  = require("fs").readFileSync("./reg.html" , "utf8");
-const htmlDisp = require("fs").readFileSync("./disp.html", "utf8");
+const htmlRegMem = require("fs").readFileSync("./regMem.html", "utf8");
+const htmlDisp   = require("fs").readFileSync("./disp.html"  , "utf8");
 const dss = [];
 
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/regMem", async (req, res) => {
-	sendRegHtml(res, "", "", "", "");
+	sendRegHtml(htmlRegMem, res, "", "", "", "");
 });
 
 app.post("/regMem", async (req, res) => {
@@ -39,14 +39,14 @@ app.post("/regMem", async (req, res) => {
 	} else {
 		msg = "業種の入力が正しくありません！";
 	}
-	sendRegHtml(res, name, type, detail, msg);
+	sendRegHtml(htmlRegMem, res, name, type, detail, msg);
 });
 
-function sendRegHtml(res, name, type, detail, msg) {
-	res.type("html").send(htmlReg.replaceAll("${name}"  , name  )
-								 .replaceAll("${type}"  , type  )
-								 .replaceAll("${detail}", detail)
-								 .replaceAll("${msg}"   , msg   ));
+function sendRegHtml(html, res, name, type, detail, msg) {
+	res.type("html").send(html.replaceAll("${name}"  , name  )
+							  .replaceAll("${type}"  , type  )
+							  .replaceAll("${detail}", detail)
+							  .replaceAll("${msg}"   , msg   ));
 }
 
 app.post("/dispMem", async (req, res) => {
